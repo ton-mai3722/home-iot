@@ -15,15 +15,11 @@ class HomeIoTApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider<AuthBloc>(
-          create: (context) => AuthBloc(),
-        ),
-      ],
+      providers: [BlocProvider<AuthBloc>(create: (context) => AuthBloc())],
       child: MaterialApp.router(
         title: AppStrings.appName,
         theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
+        darkTheme: AppTheme.lightTheme,
         themeMode: ThemeMode.system,
         routerConfig: appRouter,
         debugShowCheckedModeBanner: false,
